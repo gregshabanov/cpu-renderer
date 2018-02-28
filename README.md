@@ -1,6 +1,10 @@
 # CPU renderer
 This is a 3D renderer running solely on the CPU. 
 
+### Results
+The top picture is rendered using flat shading (lighting is calculated in the vertex shader) and the bottom one using Phong shading (lighting is calculated in the fragment shader from interpolated vertex attributes). For a video, [look here](https://vimeo.com/257862258).
+![](https://i.imgur.com/ZaLv0v2.png)
+
 ### But why would you do this
 Usually when we want to render some pretty graphics we turn to our GPUs since a lot of smart people have spent a lot of time thinking about how to make them work optimally just for this purpose. That means using an API such as OpenGL or Direct3D (or Vulkan if you want to go hard-core). GPU vendors such as NVIDIA provide an implementation of these APIs in drivers which utilize the graphic card's processing power. The rasterization of primitives is handled behind the scene and the nitty-gritty details of the process are hidden from the API's user. It might then be interesting to replicate the process on the CPU where it is fully under our control.
 
